@@ -7,6 +7,7 @@ import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
 import 'package:tranqulity/views/forget_passowrd.dart';
+import 'package:tranqulity/views/layout/layout.dart';
 import 'package:tranqulity/views/login/widgets/social_button.dart';
 import 'package:tranqulity/views/register/register.dart';
 
@@ -110,7 +111,9 @@ class _LoginViewState extends State<LoginView> {
                     child: ButtonWidget(
                       height: 60.h,
                       title: "Log In",
-                      onTap: () {},
+                      onTap: () {
+                        context.nextScreen(LayoutView());
+                      },
                       radius: 8.r,
                       buttonColor: AppColors.primary,
                     ),

@@ -6,14 +6,14 @@ import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
 
-class ChangePassword extends StatefulWidget {
-  const ChangePassword({super.key});
+class ChangePasswordView extends StatefulWidget {
+  const ChangePasswordView({super.key});
 
   @override
-  State<ChangePassword> createState() => _ChangePasswordState();
+  State<ChangePasswordView> createState() => _ChangePasswordViewState();
 }
 
-class _ChangePasswordState extends State<ChangePassword> {
+class _ChangePasswordViewState extends State<ChangePasswordView> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 

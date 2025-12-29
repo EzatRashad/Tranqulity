@@ -93,7 +93,7 @@ class _OtpViewState extends State<Otp> {
                 height: 60.h,
                 title: "Verify",
                 onTap: () {
-                  context.nextScreen(ChangePassword());
+                  context.nextScreen(ChangePasswordView());
                 },
                 radius: 8.r,
                 buttonColor: AppColors.primary,
