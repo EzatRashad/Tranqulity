@@ -35,8 +35,7 @@ class CustomTextFormFiled extends StatelessWidget {
         suffixIcon: suffixIcon,
         hintStyle: Theme.of(context)
             .textTheme
-            .titleSmall!
-            .copyWith(color: AppColors.hint_text),
+            .titleSmall,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(color: AppColors.primary.withValues(alpha: 0.3), width: 1.w),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_theme.dart';
+import 'package:tranqulity/views/register/register.dart';
 import 'package:tranqulity/views/splash_view.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.darkTheme,
           themeMode: AppTheme.currentTheme,
 
-          home: SplashView(),
+          home: Register(),
         );
       },
     );
