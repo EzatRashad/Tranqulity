@@ -14,7 +14,7 @@ class PickImageWidget extends StatelessWidget {
           backgroundColor: Color(0xff000000).withValues(alpha: .1),
           radius: 75.r,
           child: CustomImageWidget(
-            imageName: picked ? 'drawer_profile.jpg' : 'ImageBroken.svg',
+            imageName: picked ? 'drawer_profile.jpg' : 'Image_broken.svg',
 
             color: !picked ? Colors.white : null,
           ),

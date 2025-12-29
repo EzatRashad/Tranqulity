@@ -19,19 +19,19 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   final List<Map<String, String>> onboardingData = [
     {
-      "image": "onborading_1.jpg",
+      "image": "onborading1.jpg",
       "title": "Feel Free",
       "subTitle":
           "because I'm the friendly chatbot here to assist you with anything you need.",
     },
     {
-      "image": "onborading_2.jpg",
+      "image": "onborading2.jpg",
       "title": "Ask For Anything",
       "subTitle":
           "I'm your friendly neighborhood chatbot ready to assist you with any questions or concerns.",
     },
     {
-      "image": "onborading_3.jpg",
+      "image": "onborading3.jpg",
       "title": "Your Secert is Save",
       "subTitle": "Our platform prioritizes your privacy and security",
     },

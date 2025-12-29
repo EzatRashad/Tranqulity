@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
+import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
-import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
+import 'package:tranqulity/views/change_password.dart';
 import 'package:tranqulity/views/otp/widgets/verify_code_fields.dart';
 
 class Otp extends StatefulWidget {
@@ -73,31 +74,27 @@ class _OtpViewState extends State<Otp> {
               8.ph,
               Text(
                 "Please enter the code sent on your phone.",
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium!.copyWith(fontSize: 18.sp,
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 18.sp,
                   fontVariations: [FontVariation("wght", 500)],
-                  color: AppColors.primary.withValues(alpha: .67)
+                  color: AppColors.primary.withValues(alpha: .67),
                 ),
-              
-                
               ),
-               36.ph,
+              36.ph,
 
-
-                VerifyCodeFields(
+              VerifyCodeFields(
                 controllers: controllers,
                 focusNodes: focusNodes,
                 onCodeChanged: onCodeChanged,
               ),
 
-
-
               60.ph,
               ButtonWidget(
                 height: 60.h,
                 title: "Verify",
-                onTap: () {},
+                onTap: () {
+                  context.nextScreen(ChangePassword());
+                },
                 radius: 8.r,
                 buttonColor: AppColors.primary,
               ),
