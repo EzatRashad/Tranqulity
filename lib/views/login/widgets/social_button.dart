@@ -35,7 +35,7 @@ class SocialButton extends StatelessWidget {
                 bottomLeft: Radius.circular(4.r),
               ),
             ),
-            child: CustomImageWidget(imageName: imageName),
+            child: AppImage(imageName: imageName),
           ),
           Text(
             title,

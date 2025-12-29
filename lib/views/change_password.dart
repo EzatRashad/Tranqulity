@@ -30,7 +30,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
 
             children: [
               24.ph,
-              CustomImageWidget(imageName: "forget_password.png"),
+              AppImage(imageName: "forget_password.png"),
               24.ph,
               Text(
                 "Create New Password",
@@ -52,7 +52,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
               CustomTextFormFiled(
                 hint: "Password",
                 controller: passwordController,
-                suffixIcon: CustomImageWidget(
+                suffixIcon: AppImage(
                   imageName: "eye_off.svg",
                   fit: BoxFit.scaleDown,
                 ),
@@ -63,13 +63,13 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                 hint: "Confirm Password",
                 controller: passwordController,
                 obscureText: true,
-                suffixIcon: CustomImageWidget(
+                suffixIcon: AppImage(
                   imageName: "eye_off.svg",
                   fit: BoxFit.scaleDown,
                 ),
               ),
               40.ph,
-              ButtonWidget(
+              AppButton(
                 height: 60.h,
                 title: "Confirm",
                 onTap: () {},

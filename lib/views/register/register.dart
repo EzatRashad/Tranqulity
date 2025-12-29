@@ -60,7 +60,7 @@ class _RegisterViewState extends State<RegisterView> {
                 controller: genderController,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
-                  child: CustomImageWidget(imageName: 'arrow_bottom.svg'),
+                  child: AppImage(imageName: 'arrow_bottom.svg'),
                 ),
               ),
 
@@ -71,7 +71,7 @@ class _RegisterViewState extends State<RegisterView> {
                 obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
-                  child: CustomImageWidget(imageName: 'visibility_off.svg'),
+                  child: AppImage(imageName: 'visibility_off.svg'),
                 ),
               ),
               16.ph,
@@ -81,11 +81,11 @@ class _RegisterViewState extends State<RegisterView> {
                 obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
-                  child: CustomImageWidget(imageName: 'visibility_off.svg'),
+                  child: AppImage(imageName: 'visibility_off.svg'),
                 ),
               ),
               45.ph,
-              ButtonWidget(
+              AppButton(
                 height: 60.h,
                 title: "Sign Up",
                 onTap: () {

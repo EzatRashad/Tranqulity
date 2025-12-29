@@ -13,7 +13,7 @@ class PickImageWidget extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Color(0xff000000).withValues(alpha: .1),
           radius: 75.r,
-          child: CustomImageWidget(
+          child: AppImage(
             imageName: picked ? 'drawer_profile.jpg' : 'Image_broken.svg',
 
             color: !picked ? Colors.white : null,
@@ -26,7 +26,7 @@ class PickImageWidget extends StatelessWidget {
             backgroundColor: Color(0xff284243),
             child: IconButton(
               onPressed: () {},
-              icon: CustomImageWidget(
+              icon: AppImage(
                 imageName: picked ? 'edit_profile.svg' : 'add_icon.svg',
               ),
             ),

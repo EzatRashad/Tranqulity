@@ -31,7 +31,7 @@ class _ForgetPassowrdViewState extends State<ForgetPassowrdView> {
             children: [
               24.ph,
 
-              CustomImageWidget(imageName: "forget_password.png"),
+              AppImage(imageName: "forget_password.png"),
               24.ph,
               Text(
                 "Forget Your Password",
@@ -45,7 +45,7 @@ class _ForgetPassowrdViewState extends State<ForgetPassowrdView> {
                 controller: phoneController,
               ),
               33.ph,
-              ButtonWidget(
+              AppButton(
                 height: 60.h,
                 title: "Forget Password",
                 onTap: () {

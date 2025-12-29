@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
 
             children: [
-              CustomImageWidget(imageName: "login.png"),
+              AppImage(imageName: "login.png"),
               24.ph,
               Align(
                 alignment: Alignment.centerLeft,
@@ -70,7 +70,7 @@ class _LoginViewState extends State<LoginView> {
                 hint: "Please enter your password",
                 controller: passwordController,
                 obscureText: true,
-                suffixIcon: CustomImageWidget(
+                suffixIcon: AppImage(
                   imageName: "eye_off.svg",
                   fit: BoxFit.scaleDown,
                 ),
@@ -102,13 +102,13 @@ class _LoginViewState extends State<LoginView> {
                         borderRadius: BorderRadius.circular(8.r),
                         color: AppColors.primary.withValues(alpha: .1),
                       ),
-                      child: CustomImageWidget(imageName: 'finger.svg'),
+                      child: AppImage(imageName: 'finger.svg'),
                     ),
                   ),
                   10.pw,
                   Expanded(
                     flex: 4,
-                    child: ButtonWidget(
+                    child: AppButton(
                       height: 60.h,
                       title: "Log In",
                       onTap: () {

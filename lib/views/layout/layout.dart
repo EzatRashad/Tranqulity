@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
 import 'package:tranqulity/core/utils/utils.dart';
+import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
+import 'package:tranqulity/views/chat/chat_view.dart';
 
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
@@ -17,7 +19,7 @@ class _LayoutViewState extends State<LayoutView> {
       'chat.svg',
       'chats_active.svg',
       'Chats',
-      Scaffold(body: Center(child: Text("Chat"))),
+      ChatView(),
     ),
     Model(
       'quote.svg',
@@ -37,6 +39,14 @@ class _LayoutViewState extends State<LayoutView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: AppButton(
+        height: 60.h,
+        width: 60.w,
+        onTap: () {},
+        radius: 16.r,
+        buttonColor: AppColors.primary,
+        child: AppImage(imageName: "flaot_chat.svg"),
+      ),
       drawer: Drawer(),
 
       appBar: AppBar(
@@ -63,7 +73,7 @@ class _LayoutViewState extends State<LayoutView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomImageWidget(
+                  AppImage(
                     imageName: currentIndex == index
                         ? list[index].activeImage
                         : list[index].image,

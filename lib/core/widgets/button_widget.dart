@@ -1,8 +1,8 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
 
-class ButtonWidget extends StatelessWidget {
+class AppButton extends StatelessWidget {
   final String title;
   final String? fontFamily;
   final double width, height, radius;
@@ -15,7 +15,7 @@ class ButtonWidget extends StatelessWidget {
   final void Function()? onTap;
   final bool withBorder;
 
-  const ButtonWidget({
+  const AppButton({
     super.key,
     this.gradient,
     this.title = "OK",
@@ -65,9 +65,9 @@ class ButtonWidget extends StatelessWidget {
             child ??
             Text(
               title,
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: AppColors.white,
-              )
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium!.copyWith(color: AppColors.white),
             ),
       ),
     );

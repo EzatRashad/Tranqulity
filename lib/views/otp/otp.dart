@@ -63,7 +63,7 @@ class _OtpViewState extends State<Otp> {
             padding: EdgeInsets.symmetric(horizontal: 20.0.w),
             children: [
               24.ph,
-              CustomImageWidget(imageName: "otp.png"),
+              AppImage(imageName: "otp.png"),
               24.ph,
               Text(
                 "Verification",
@@ -89,7 +89,7 @@ class _OtpViewState extends State<Otp> {
               ),
 
               60.ph,
-              ButtonWidget(
+              AppButton(
                 height: 60.h,
                 title: "Verify",
                 onTap: () {

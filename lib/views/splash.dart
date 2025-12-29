@@ -52,10 +52,7 @@ class _SplashViewState extends State<SplashView>
         child: ScaleTransition(
           scale: Tween<double>(begin: 0.85, end: 1.0).animate(_scaleAnimation),
           child: Center(
-            child: CustomImageWidget(
-              imageName: "tranquiliey.jpg",
-              width: 250.w,
-             ),
+            child: AppImage(imageName: "tranquiliey.jpg", width: 250.w),
           ),
         ),
       ),

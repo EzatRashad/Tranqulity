@@ -69,7 +69,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 final item = onboardingData[index];
                 return Column(
                   children: [
-                    CustomImageWidget(
+                    AppImage(
                       width: double.infinity,
                       height: 600.h,
                       imageName: item["image"]!,
@@ -125,9 +125,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     color: AppColors.primary,
                     shape: BoxShape.circle,
                   ),
-                  child: Center(
-                    child: CustomImageWidget(imageName: "arrow.svg"),
-                  ),
+                  child: Center(child: AppImage(imageName: "arrow.svg")),
                 ),
               ),
               12.pw,
