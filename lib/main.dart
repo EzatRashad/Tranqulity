@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_theme.dart';
+import 'package:tranqulity/views/forget_passowrd.dart';
 import 'package:tranqulity/views/register/register.dart';
-import 'package:tranqulity/views/splash_view.dart';
+import 'package:tranqulity/views/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.darkTheme,
           themeMode: AppTheme.currentTheme,
 
-          home: Register(),
+          home: SplashView(),
         );
       },
     );

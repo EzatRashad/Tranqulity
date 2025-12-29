@@ -78,7 +78,6 @@ class _OnboardingViewState extends State<OnboardingView> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.0.w),
                       child: Column(
-                        
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(item["title"]!, style: theme.titleLarge),
@@ -90,27 +89,28 @@ class _OnboardingViewState extends State<OnboardingView> {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 );
               },
             ),
           ),
-    
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-             children: [
+            children: [
               12.pw,
               GestureDetector(
-              onTap: () {
-                 context.nextScreen(const Login(), replacment: true);
-              },
-              child: Text( "Skip", style: theme.titleSmall)),
+                onTap: () {
+                  context.nextScreen(const LoginView(), replacment: true);
+                },
+                child: Text("Skip", style: theme.titleSmall),
+              ),
               const Spacer(),
               GestureDetector(
                 onTap: () {
                   if (currentPage == onboardingData.length - 1) {
-                    context.nextScreen(const Login(), replacment: true);
+                    context.nextScreen(const LoginView(), replacment: true);
                   } else {
                     pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
@@ -120,20 +120,20 @@ class _OnboardingViewState extends State<OnboardingView> {
                 },
                 child: Container(
                   height: 60.h,
-                  width:  50.w,
-                   decoration: BoxDecoration(
+                  width: 50.w,
+                  decoration: BoxDecoration(
                     color: AppColors.primary,
-                    shape: BoxShape.circle
+                    shape: BoxShape.circle,
                   ),
                   child: Center(
-                    child: CustomImageWidget(imageName: "arrow.svg")
+                    child: CustomImageWidget(imageName: "arrow.svg"),
                   ),
                 ),
               ),
               12.pw,
             ],
           ),
-    
+
           50.ph,
         ],
       ),

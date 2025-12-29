@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
+import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
+import 'package:tranqulity/views/login/login.dart';
+import 'package:tranqulity/views/otp/otp.dart';
 import 'package:tranqulity/views/register/widgets/pick_image_widget.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _RegisterState extends State<Register> {
-  final email_controller = TextEditingController();
+class _RegisterViewState extends State<RegisterView> {
+  final emailController = TextEditingController();
 
-  final password_controller = TextEditingController();
-  final confirm_password_controller = TextEditingController();
-  final username_controller = TextEditingController();
-
-  final age_controller = TextEditingController();
-  final gender_controller = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+  final usernameController = TextEditingController();
+  final ageController = TextEditingController();
+  final genderController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
   bool picked = false;
@@ -38,24 +40,24 @@ class _RegisterState extends State<Register> {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             children: [
-              20.ph,
+              24.ph,
               Center(child: PickImageWidget(picked: picked)),
               41.ph,
 
               16.ph,
               CustomTextFormFiled(
                 hint: "Username",
-                controller: username_controller,
+                controller: usernameController,
               ),
               16.ph,
-              CustomTextFormFiled(hint: "Email", controller: email_controller),
+              CustomTextFormFiled(hint: "Email", controller: emailController),
 
               16.ph,
-              CustomTextFormFiled(hint: "Age", controller: age_controller),
+              CustomTextFormFiled(hint: "Age", controller: ageController),
               16.ph,
               CustomTextFormFiled(
                 hint: "Gender",
-                controller: gender_controller,
+                controller: genderController,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
                   child: CustomImageWidget(imageName: 'arrow_bottom.svg'),
@@ -65,7 +67,7 @@ class _RegisterState extends State<Register> {
               16.ph,
               CustomTextFormFiled(
                 hint: "Password",
-                controller: password_controller,
+                controller: passwordController,
                 obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
@@ -75,7 +77,7 @@ class _RegisterState extends State<Register> {
               16.ph,
               CustomTextFormFiled(
                 hint: "Confirm password",
-                controller: confirm_password_controller,
+                controller: confirmPasswordController,
                 obscureText: true,
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0.r),
@@ -86,13 +88,11 @@ class _RegisterState extends State<Register> {
               ButtonWidget(
                 height: 60.h,
                 title: "Sign Up",
-                onTap: () {},
+                onTap: () {
+                  context.nextScreen(Otp());
+                },
                 radius: 8.r,
-                gradient: const LinearGradient(
-                  begin: Alignment(0.00, 0.58),
-                  end: Alignment(1.00, 0.57),
-                  colors: [Color(0xFF5CC7A3), Color(0xFF265355)],
-                ),
+                borderColor: AppColors.primary,
               ),
               36.ph,
               Row(
@@ -107,7 +107,7 @@ class _RegisterState extends State<Register> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      //    context.nextScreen(const Register());
+                      context.nextScreen(const LoginView());
                     },
                     child: Text(
                       " Login",

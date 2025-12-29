@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
+import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
+import 'package:tranqulity/views/forget_passowrd.dart';
 import 'package:tranqulity/views/login/widgets/social_button.dart';
+import 'package:tranqulity/views/register/register.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginState extends State<Login> {
-  final email_controller = TextEditingController();
-  final password_controller = TextEditingController();
+class _LoginViewState extends State<LoginView> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -55,16 +58,16 @@ class _LoginState extends State<Login> {
                 ),
               ),
               10.ph,
-              
+
               CustomTextFormFiled(
                 hint: "Please enter your email",
-                controller: email_controller,
+                controller: emailController,
               ),
-              
+
               16.ph,
               CustomTextFormFiled(
                 hint: "Please enter your password",
-                controller: password_controller,
+                controller: passwordController,
                 obscureText: true,
                 suffixIcon: CustomImageWidget(
                   imageName: "eye_off.svg",
@@ -74,16 +77,21 @@ class _LoginState extends State<Login> {
               24.ph,
               Align(
                 alignment: Alignment.centerRight,
-                child: Text(
-                  "Forgot Password?",
-                  style: theme.titleLarge!.copyWith(
-                    fontSize: 16.sp,
-                    color: AppColors.primary,
+                child: GestureDetector(
+                  onTap: () {
+                    context.nextScreen(const ForgetPassowrdView());
+                  },
+                  child: Text(
+                    "Forgot Password?",
+                    style: theme.titleLarge!.copyWith(
+                      fontSize: 16.sp,
+                      color: AppColors.primary,
+                    ),
                   ),
                 ),
               ),
               56.ph,
-              
+
               Row(
                 children: [
                   Expanded(
@@ -104,11 +112,7 @@ class _LoginState extends State<Login> {
                       title: "Log In",
                       onTap: () {},
                       radius: 8.r,
-                      gradient: const LinearGradient(
-                        begin: Alignment(0.00, 0.58),
-                        end: Alignment(1.00, 0.57),
-                        colors: [Color(0xFF5CC7A3), Color(0xFF265355)],
-                      ),
+                      buttonColor: AppColors.primary,
                     ),
                   ),
                 ],
@@ -126,7 +130,7 @@ class _LoginState extends State<Login> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      //    context.nextScreen(const Register());
+                      context.nextScreen(const RegisterView());
                     },
                     child: Text(
                       " Sign up",

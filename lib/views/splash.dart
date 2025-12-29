@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
 import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
-import 'package:tranqulity/views/onboarding_view.dart';
+import 'package:tranqulity/views/onboarding.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
