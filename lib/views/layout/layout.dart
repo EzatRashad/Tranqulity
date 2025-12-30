@@ -5,6 +5,7 @@ import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/views/chat/chat_view.dart';
+import 'package:tranqulity/views/layout/widgets/app_drawer.dart';
 
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
@@ -47,7 +48,7 @@ class _LayoutViewState extends State<LayoutView> {
         buttonColor: AppColors.primary,
         child: AppImage(imageName: "flaot_chat.svg"),
       ),
-      drawer: Drawer(),
+      drawer: AppDrawer(),
 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
