@@ -21,6 +21,12 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   final _formKey = GlobalKey<FormState>();
 
@@ -71,7 +77,7 @@ class _LoginViewState extends State<LoginView> {
                 controller: passwordController,
                 obscureText: true,
                 suffixIcon: AppImage(
-                  imageName: "eye_off.svg",
+                  imageName: "eye.svg",
                   fit: BoxFit.scaleDown,
                 ),
               ),
@@ -92,7 +98,6 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               56.ph,
-
               Row(
                 children: [
                   Expanded(
@@ -112,7 +117,15 @@ class _LoginViewState extends State<LoginView> {
                       height: 60.h,
                       title: "Log In",
                       onTap: () {
-                        context.nextScreen(LayoutView());
+                         print(
+                          "1111111111111111111111111111111111111111,",
+                        );
+                        context.nextScreen(
+                          const LayoutView(),
+                        );
+                        print(
+                          "0000000000000000000000000000000000000000000000000000,",
+                        );
                       },
                       radius: 8.r,
                       buttonColor: AppColors.primary,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_theme.dart';
+import 'package:tranqulity/views/login/login.dart';
 import 'package:tranqulity/views/splash.dart';
 
 void main() {
@@ -30,4 +31,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

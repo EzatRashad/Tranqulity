@@ -4,6 +4,7 @@ import 'package:tranqulity/core/style/app_colors.dart';
 import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
+import 'package:tranqulity/views/layout/layout.dart';
 import 'package:tranqulity/views/login/login.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -102,7 +103,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               12.pw,
               GestureDetector(
                 onTap: () {
-                  context.nextScreen(const LoginView(), replacment: true);
+                  context.nextScreen(const LoginView(), );
                 },
                 child: Text("Skip", style: theme.titleSmall),
               ),
@@ -110,7 +111,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               GestureDetector(
                 onTap: () {
                   if (currentPage == onboardingData.length - 1) {
-                    context.nextScreen(const LoginView(), replacment: true);
+                    context.nextScreen(const LoginView(),  );
                   } else {
                     pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

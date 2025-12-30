@@ -16,6 +16,7 @@ class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
+  
 
   @override
   void initState() {
@@ -33,9 +34,12 @@ class _SplashViewState extends State<SplashView>
 
     _controller.forward();
 
-    Future.delayed(const Duration(seconds: 1), () {
-      context.nextScreen(const OnboardingView(), replacment: true);
+   Future.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+      context.nextScreen(const OnboardingView(), replacement: true);
     });
+
+
   }
 
   @override

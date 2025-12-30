@@ -6,6 +6,7 @@ import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/views/chat/chat_view.dart';
 import 'package:tranqulity/views/layout/widgets/app_drawer.dart';
+import 'package:tranqulity/views/quotes.dart';
 
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
@@ -16,25 +17,16 @@ class LayoutView extends StatefulWidget {
 
 class _LayoutViewState extends State<LayoutView> {
   final list = [
-    Model(
-      'chat.svg',
-      'chats_active.svg',
-      'Chats',
-      ChatView(),
-    ),
-    Model(
-      'quote.svg',
-      'quote_active.svg',
-      'Quotes',
-      Scaffold(body: Center(child: Text("Quote"))),
-    ),
+    Model('chat.svg', 'chats_active.svg', 'Chats', () => const ChatView()),
+    Model('quote.svg', 'quote_active.svg', 'Quotes', () => const QuotesView()),
     Model(
       'profile.svg',
       'profile_acive.svg',
       'Profile',
-      Scaffold(body: Center(child: Text("Profile"))),
+      () => const Scaffold(body: Center(child: Text("Profile"))),
     ),
   ];
+
   int currentIndex = 0;
 
   @override
@@ -57,7 +49,7 @@ class _LayoutViewState extends State<LayoutView> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      body: list[currentIndex].page,
+      body: list[currentIndex].builder(),
       bottomNavigationBar: Container(
         height: 65.h,
         color: AppColors.primary,
@@ -67,9 +59,8 @@ class _LayoutViewState extends State<LayoutView> {
             list.length,
             (index) => GestureDetector(
               onTap: () {
-                setState(() {
-                  currentIndex = index;
-                });
+                if (currentIndex == index) return;
+                setState(() => currentIndex = index);
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -101,6 +92,7 @@ class _LayoutViewState extends State<LayoutView> {
 
 class Model {
   final String image, activeImage, label;
-  final Widget page;
-  Model(this.image, this.activeImage, this.label, this.page);
+  final Widget Function() builder;
+
+  Model(this.image, this.activeImage, this.label, this.builder);
 }
