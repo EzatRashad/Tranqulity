@@ -5,7 +5,7 @@ import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
-import 'package:tranqulity/views/change_password.dart';
+import 'package:tranqulity/views/forget_password.dart';
 import 'package:tranqulity/views/otp/widgets/verify_code_fields.dart';
 
 class Otp extends StatefulWidget {
@@ -93,7 +93,7 @@ class _OtpViewState extends State<Otp> {
                 height: 60.h,
                 title: "Verify",
                 onTap: () {
-                  context.nextScreen(ChangePasswordView());
+                  context.nextScreen(ForgetPasswordView());
                 },
                 radius: 8.r,
                 buttonColor: AppColors.primary,

@@ -15,7 +15,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_screenutil:
   flutter_svg:
-  device_preview:
+  image_picker:
+
 
 dev_dependencies:
   flutter_test:

@@ -8,6 +8,8 @@ import 'package:tranqulity/views/chat/chat_view.dart';
 import 'package:tranqulity/views/layout/widgets/app_drawer.dart';
 import 'package:tranqulity/views/quotes.dart';
 
+import '../profile.dart';
+
 class LayoutView extends StatefulWidget {
   const LayoutView({super.key});
 
@@ -23,7 +25,7 @@ class _LayoutViewState extends State<LayoutView> {
       'profile.svg',
       'profile_acive.svg',
       'Profile',
-      () => const Scaffold(body: Center(child: Text("Profile"))),
+      () => const ProfileView(),
     ),
   ];
 

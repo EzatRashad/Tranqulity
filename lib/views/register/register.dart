@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
@@ -9,6 +11,8 @@ import 'package:tranqulity/core/widgets/custom_text_form_filed.dart';
 import 'package:tranqulity/views/login/login.dart';
 import 'package:tranqulity/views/otp/otp.dart';
 import 'package:tranqulity/views/register/widgets/pick_image_widget.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -16,10 +20,8 @@ class RegisterView extends StatefulWidget {
   @override
   State<RegisterView> createState() => _RegisterViewState();
 }
-
 class _RegisterViewState extends State<RegisterView> {
   final emailController = TextEditingController();
-
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final usernameController = TextEditingController();
@@ -27,7 +29,20 @@ class _RegisterViewState extends State<RegisterView> {
   final genderController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  bool picked = false;
+
+  File? profileImage;
+
+  Future<void> pickImage() async {
+    final picker = ImagePicker();
+    final XFile? image =
+    await picker.pickImage(source: ImageSource.gallery, imageQuality: 80);
+
+    if (image != null) {
+      setState(() {
+        profileImage = File(image.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,19 +56,33 @@ class _RegisterViewState extends State<RegisterView> {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             children: [
               24.ph,
-              Center(child: PickImageWidget(picked: picked)),
+
+              Center(
+                child: PickImageWidget(
+                  image: profileImage,
+                  onTap: pickImage,
+                ),
+              ),
+
               41.ph,
 
-              16.ph,
               CustomTextFormFiled(
                 hint: "Username",
                 controller: usernameController,
               ),
               16.ph,
-              CustomTextFormFiled(hint: "Email", controller: emailController),
+
+              CustomTextFormFiled(
+                hint: "Email",
+                controller: emailController,
+              ),
 
               16.ph,
-              CustomTextFormFiled(hint: "Age", controller: ageController),
+              CustomTextFormFiled(
+                hint: "Age",
+                controller: ageController,
+              ),
+
               16.ph,
               CustomTextFormFiled(
                 hint: "Gender",
@@ -74,6 +103,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: AppImage(imageName: 'visibility_off.svg'),
                 ),
               ),
+
               16.ph,
               CustomTextFormFiled(
                 hint: "Confirm password",
@@ -84,6 +114,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: AppImage(imageName: 'visibility_off.svg'),
                 ),
               ),
+
               45.ph,
               AppButton(
                 height: 60.h,
@@ -94,6 +125,7 @@ class _RegisterViewState extends State<RegisterView> {
                 radius: 8.r,
                 borderColor: AppColors.primary,
               ),
+
               36.ph,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
