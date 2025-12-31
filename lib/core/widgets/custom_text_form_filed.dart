@@ -1,21 +1,25 @@
-import '/core/style/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '/core/style/app_colors.dart';
 
 class CustomTextFormFiled extends StatelessWidget {
   const CustomTextFormFiled({
     super.key,
+    this.maxLines = 1,
     required this.controller,
     this.obscureText = false,
     this.suffixIcon,
     this.validator,
     required this.hint,
   });
+
   final TextEditingController controller;
   final String hint;
   final bool obscureText;
   final Widget? suffixIcon;
   final String? Function(String?)? validator;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +31,19 @@ class CustomTextFormFiled extends StatelessWidget {
       cursorColor: AppColors.borderColor,
       controller: controller,
       obscureText: obscureText,
-
+      maxLines: maxLines,
       decoration: InputDecoration(
         fillColor: AppColors.primary.withOpacity(0.05),
         filled: true,
         hintText: hint,
         suffixIcon: suffixIcon,
-        hintStyle: Theme.of(context)
-            .textTheme
-            .titleSmall,
+        hintStyle: Theme.of(context).textTheme.titleSmall,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.primary.withValues(alpha: 0.3), width: 1.w),
+          borderSide: BorderSide(
+            color: AppColors.primary.withValues(alpha: 0.3),
+            width: 1.w,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

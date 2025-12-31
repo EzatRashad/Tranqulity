@@ -5,6 +5,7 @@ import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
 import 'package:tranqulity/views/login/login.dart';
+import 'package:tranqulity/views/suggestions.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -64,7 +65,7 @@ class AppDrawer extends StatelessWidget {
           Item(
             title: "Suggestions",
             image: "suggestion.svg",
-            page: LoginView(),
+            page: Suggestions(),
           ),
           16.ph,
           Item(
