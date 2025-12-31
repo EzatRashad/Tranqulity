@@ -4,6 +4,7 @@ import 'package:tranqulity/core/style/app_colors.dart';
 import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
+import 'package:tranqulity/views/about_us.dart';
 import 'package:tranqulity/views/login/login.dart';
 import 'package:tranqulity/views/suggestions.dart';
 
@@ -58,7 +59,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           24.ph,
-          Item(title: "About Us", image: "about_us.svg", page: LoginView()),
+          Item(title: "About Us", image: "about_us.svg", page: AboutUsView()),
           16.ph,
           Item(title: "Rate Our App", image: "star.svg", page: LoginView()),
           16.ph,
