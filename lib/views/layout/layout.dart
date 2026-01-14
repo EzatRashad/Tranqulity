@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/style/app_colors.dart';
+import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/button_widget.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
+import 'package:tranqulity/views/assistent.dart';
 import 'package:tranqulity/views/chat/chat_view.dart';
 import 'package:tranqulity/views/layout/widgets/app_drawer.dart';
 import 'package:tranqulity/views/quotes.dart';
@@ -37,7 +39,9 @@ class _LayoutViewState extends State<LayoutView> {
       floatingActionButton: AppButton(
         height: 60.h,
         width: 60.w,
-        onTap: () {},
+        onTap: () {
+          context.nextScreen(AssistentChatView());
+        },
         radius: 16.r,
         buttonColor: AppColors.primary,
         child: AppImage(imageName: "flaot_chat.svg"),

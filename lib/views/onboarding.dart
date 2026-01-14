@@ -4,7 +4,6 @@ import 'package:tranqulity/core/style/app_colors.dart';
 import 'package:tranqulity/core/utils/navigate.dart';
 import 'package:tranqulity/core/utils/utils.dart';
 import 'package:tranqulity/core/widgets/custom_image_widget.dart';
-import 'package:tranqulity/views/layout/layout.dart';
 import 'package:tranqulity/views/login/login.dart';
 
 class OnboardingView extends StatefulWidget {
